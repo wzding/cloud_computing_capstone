@@ -14,6 +14,8 @@ def mapper():
 			continue
 		if len(line) < 78:
 			continue
+		if not line[Carrier] or not line[ArrDelay]:
+			continue
 		print("%s\t%s" % (line[Carrier], line[ArrDelay]))
 
 if __name__ == "__main__":
