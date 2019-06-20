@@ -12,7 +12,7 @@ def mapper():
 			line = line.replace('"', '').split(",")
 		except ValueError:
 			continue
-		if len(line) < 58:
+		if len(line) < 78:
 			continue
 		if len(line[ORIGIN_AIRPORT]) != 3 or len(line[DESTINATION_AIRPORT]) != 3:
 			continue
