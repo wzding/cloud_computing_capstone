@@ -14,15 +14,15 @@ def reducer():
 			count = int(count)
 		except ValueError:
 			continue
-
+		# same airport 
 		if curr_aprt == aprt:
 			curr_count += count
-		else:
+		else: # different airport
 			if curr_aprt:
 				print("{}\t{}".format(curr_aprt, curr_count))
 			curr_count = count
 			curr_aprt = aprt
-	
+	# last airport
 	if curr_aprt == aprt:
 		print("{}\t{}".format(curr_aprt, curr_count))
 
