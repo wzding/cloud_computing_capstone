@@ -3,8 +3,8 @@
 
 import sys
 
-Carrier = 8
-ArrDelay = 38
+CARRIER = 8
+ARRDELAY = 38
 
 def mapper():
 	for line in sys.stdin:
@@ -14,9 +14,9 @@ def mapper():
 			continue
 		if len(line) < 78:
 			continue
-		if not line[Carrier] or not line[ArrDelay]:
+		if not line[CARRIER] or not line[ARRDELAY]:
 			continue
-		print("%s\t%s" % (line[Carrier], line[ArrDelay]))
+		print("%s\t%s" % (line[CARRIER], line[ARRDELAY]))
 
 if __name__ == "__main__":
 	mapper()
