@@ -1,10 +1,14 @@
 #!/usr/bin/env python
+"""reducer.py for question 1.2"""
 
 import sys
 
-res = {}
-
 def reducer():
+
+	curr_carrier = None
+	total_delay = 0
+	count = 0
+
 	for line in sys.stdin:
 		carrier, delay = line.strip().split("\t")
 
@@ -13,14 +17,21 @@ def reducer():
 		except ValueError:
 			continue
 
-		if carrier in res:
-			res[carrier].append(delay)
+		if curr_carrier == carrier:
+			total_delay += delay 
+			count += 1
 		else:
-			res[carrier] = [delay]
+			if curr_carrier:
+				print("%s\t%.2f" % (curr_carrier, total_delay * 1.0/ count)) 
+			curr_carrier = carrier 
+			total_delay = delay
+			count = 1
+	# last carrier
+	if curr_carrier == carrier:
+		print("%s\t%.2f" % (carrier, total_delay * 1.0/ count)) 
+
 
 
 if __name__ == "__main__":
 	reducer()
-	for carrier in res:
-		avg_delay = sum(res[carrier]) / len(res[carrier])
-		print("%s\t%s" % (carrier, avg_delay))
+		
