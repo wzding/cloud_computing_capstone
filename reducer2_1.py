@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-"""reducer.py for question 1.2"""
+"""reducer.py for question 2.1
+For each airport X, rank the top-10 carriers in decreasing order of on-time departure performance from X.
+"""
 
 import sys
 
