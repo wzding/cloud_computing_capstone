@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+"""reducer.py for question 1.1"""
 
 import sys
 
@@ -7,6 +8,7 @@ def reducer():
 	curr_aprt = None
 	curr_count = 0
 	aprt = None
+	
 	for line in sys.stdin:
 		aprt, count = line.strip().split("\t")
 
