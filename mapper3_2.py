@@ -24,7 +24,7 @@ def mapper():
 			continue
 		if len(line[ORIGIN_AIRPORT]) < 3 or len(line[DESTINATION_AIRPORT]) < 3:
 			continue
-		if not line[DEPDATE] or not line[DEPTIME]:
+		if not line[DEPDATE] or line[DEPDATE][:4] != '1988' or not line[DEPTIME]:
 			continue
 		if not line[CARRIER] or not line[FLIGHTNUM] or not line[ARRDELAY]:
 			continue
